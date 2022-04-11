@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,24 +37,32 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
         Post post = arrayList.get(position);
         if (post != null){
             StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-            StorageReference profileRef = storageReference.child("post/"+
+
+            StorageReference avt = storageReference.child("avt/"+
                     post.getAvt());
-            profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            avt.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
                     Picasso.get().load(uri).into(holder.avtPost);
                 }
             });
-            holder.tvNamePost.setText(post.getNamePost());
+            StorageReference postImg = storageReference.child("posts/"+
+                    post.getImgpost());
+            postImg.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get().load(uri).into(holder.img_post);
+                }
+            });
+            holder.tvNamePost.setText(post.getNamepost());
             holder.tvContentPost.setText(post.getContent());
         }
     }
 
     @Override
     public int getItemCount() {
-        if (arrayList != null)
-            return arrayList.size();
-        return 0;
+
+        return arrayList.size();
     }
 
 

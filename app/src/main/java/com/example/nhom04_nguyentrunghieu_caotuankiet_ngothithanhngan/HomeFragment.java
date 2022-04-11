@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     AdapterPost adapterPost;
     ArrayList<Post> posts;
     FirebaseDatabase fDatabase;
-    DatabaseReference dRestaurant;
+    DatabaseReference dPost;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -93,8 +93,8 @@ public class HomeFragment extends Fragment {
         rvPost.setLayoutManager(layoutManager);
         rvPost.addItemDecoration(new DividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
         fDatabase = FirebaseDatabase.getInstance();
-        dRestaurant = fDatabase.getReference();
-        Query qRestaurant = dRestaurant.child("restaurants");
+        dPost = fDatabase.getReference();
+        Query qRestaurant = dPost.child("post");
         qRestaurant.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

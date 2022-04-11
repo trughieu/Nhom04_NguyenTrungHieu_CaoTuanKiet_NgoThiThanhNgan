@@ -15,8 +15,7 @@
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="70dp"
@@ -29,8 +28,7 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/botronnnone"
             android:gravity="left|center_vertical"
-            android:text="TYPE SOMETHING"
-            />
+            android:text="TYPE SOMETHING" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,13 +36,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
-        tools:listitem="@layout/layout_post"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.497"
+        tools:listitem="@layout/layout_post" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

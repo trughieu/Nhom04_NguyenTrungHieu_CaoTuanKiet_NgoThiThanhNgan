@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class Post implements Serializable {
     String avt;
-    String namePost;
+    String namepost;
     String content;
-    String imgPost;
+    String imgpost;
 
     public Post(String avt, String namePost, String content, String imgPost) {
         this.avt = avt;
-        this.namePost = namePost;
+        this.namepost = namePost;
         this.content = content;
-        this.imgPost = imgPost;
+        this.imgpost = imgPost;
     }
 
     public Post() {
@@ -26,12 +26,12 @@ public class Post implements Serializable {
         this.avt = avt;
     }
 
-    public String getNamePost() {
-        return namePost;
+    public String getNamepost() {
+        return namepost;
     }
 
-    public void setNamePost(String namePost) {
-        this.namePost = namePost;
+    public void setNamepost(String namepost) {
+        this.namepost = namepost;
     }
 
     public String getContent() {
@@ -42,21 +42,21 @@ public class Post implements Serializable {
         this.content = content;
     }
 
-    public String getImgPost() {
-        return imgPost;
+    public String getImgpost() {
+        return imgpost;
     }
 
-    public void setImgPost(String imgPost) {
-        this.imgPost = imgPost;
+    public void setImgpost(String imgpost) {
+        this.imgpost = imgpost;
     }
 
     @Override
     public String toString() {
         return "Post{" +
                 "avt='" + avt + '\'' +
-                ", namePost='" + namePost + '\'' +
+                ", namePost='" + namepost + '\'' +
                 ", content='" + content + '\'' +
-                ", imgPost='" + imgPost + '\'' +
+                ", imgPost='" + imgpost + '\'' +
                 '}';
     }
 }
