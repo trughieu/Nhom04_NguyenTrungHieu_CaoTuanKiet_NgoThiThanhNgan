@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:title="Home"
+            android:id="@+id/mnuHome"
+            android:icon="@drawable/ic_baseline_home_24"
+            />
+        <item android:title="Friend"
+            android:id="@+id/mnuList"
+            android:icon="@drawable/ic_baseline_person_add_24"
+            />
+        <item android:title="Notification"
+            android:id="@+id/mnuNote"
+            android:icon="@drawable/ic_baseline_notifications_24"
+            />
+        <item android:title="Profile"
+            android:id="@+id/mnuTranslate"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            />
+</menu>
