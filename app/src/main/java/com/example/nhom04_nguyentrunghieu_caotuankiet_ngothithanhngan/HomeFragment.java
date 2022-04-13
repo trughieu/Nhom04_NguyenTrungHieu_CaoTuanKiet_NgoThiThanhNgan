@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -71,6 +74,7 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
         posts = new ArrayList<>();
 
     }
@@ -89,9 +93,9 @@ public class HomeFragment extends Fragment {
         adapterPost = new AdapterPost(posts);
         rvPost.setAdapter(adapterPost);
         LinearLayoutManager layoutManager = new
-                LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvPost.setLayoutManager(layoutManager);
-        rvPost.addItemDecoration(new DividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
+        rvPost.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         fDatabase = FirebaseDatabase.getInstance();
         dPost = fDatabase.getReference();
         Query qRestaurant = dPost.child("post");
@@ -99,15 +103,30 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 posts.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Post post = dataSnapshot.getValue(Post.class);
                     posts.add(post);
                 }
                 adapterPost.notifyDataSetChanged();
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.search_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.mnuSearch) {
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

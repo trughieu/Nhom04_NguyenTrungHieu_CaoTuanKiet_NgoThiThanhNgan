@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:paddingBottom="20dp"
+    android:layout_marginTop="20dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -32,7 +33,7 @@
                 android:id="@+id/namePost"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:fontFamily="@font/vinhan"
+                android:fontFamily="@font/segoe_bold"
                 android:gravity="center_vertical"
                 android:text="Nguyễn Trung Hiếu"
                 android:textColor="@color/black"
@@ -52,8 +53,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="just"
-                    android:textColor="@color/black" />
+                    android:text="Vừa xong"
+                    android:fontFamily="@font/segoe_bold"
+                    android:textColor="@color/gray" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -62,7 +64,7 @@
         android:id="@+id/content_post"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/arial"
+        android:fontFamily="@font/segoe_ui"
         android:text="đây là một bài viết"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -79,4 +81,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content_post" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:text="LIKE"
+        app:layout_constraintEnd_toEndOf="@+id/img_post"
+        app:layout_constraintStart_toStartOf="@+id/img_post"
+        app:layout_constraintTop_toBottomOf="@+id/img_post" />
 </androidx.constraintlayout.widget.ConstraintLayout>

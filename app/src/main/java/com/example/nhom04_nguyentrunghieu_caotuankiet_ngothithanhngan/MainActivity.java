@@ -1,24 +1,16 @@
 package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -64,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 toolbar.setTitle("Home");
                 fragment = new HomeFragment();
                 break;
-            case R.id.mnuList:
+            case R.id.mnuFriend:
                 toolbar.setTitle("List");
                 fragment = new SettingFragment();
 //                fragment = new CategoriesFragment();
@@ -73,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
                 toolbar.setTitle("Vocabulary");
                 fragment = new ProfileFragment();
                 break;
-//            case R.id.mnuTranslate:
-//                toolbar.setTitle("Dictionary");
-//                fragment = new TranslateFragment();
-//                break;
+            case R.id.mnuProfile:
+                toolbar.setTitle("Dictionary");
+                fragment = new ProfileFragment();
+                break;
 
         }
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

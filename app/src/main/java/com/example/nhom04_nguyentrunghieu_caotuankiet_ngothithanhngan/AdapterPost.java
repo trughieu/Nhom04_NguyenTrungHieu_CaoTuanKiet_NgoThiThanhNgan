@@ -78,5 +78,4 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
             img_post = itemView.findViewById(R.id.img_post);
         }
     }
-
 }
