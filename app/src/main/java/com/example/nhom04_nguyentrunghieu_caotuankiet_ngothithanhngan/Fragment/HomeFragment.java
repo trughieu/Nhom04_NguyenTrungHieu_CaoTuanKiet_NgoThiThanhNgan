@@ -1,4 +1,4 @@
-package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan;
+package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Fragment;
 
 import android.os.Bundle;
 
@@ -16,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.AdapterPost;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Post;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

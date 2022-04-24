@@ -1,8 +1,10 @@
-package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan;
+package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.R;
 
 public class LoginActivity extends AppCompatActivity {
 

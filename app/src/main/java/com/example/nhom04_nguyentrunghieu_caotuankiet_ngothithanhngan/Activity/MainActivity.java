@@ -1,4 +1,4 @@
-package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan;
+package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +9,19 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Fragment.HomeFragment;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Fragment.ProfileFragment;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.R;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Fragment.SettingFragment;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Toolbar toolbar;
+
+    BottomAppBar bottomAppBar;
 //
 //    NavController navController;
 //    AppBarConfiguration appBarConfiguration;
@@ -29,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setBackground(null);
 //        drawer = findViewById(R.id.drawerLayout);
 
 
@@ -36,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         display(R.id.mnuHome);
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
