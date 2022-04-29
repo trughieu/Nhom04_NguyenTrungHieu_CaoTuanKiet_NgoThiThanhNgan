@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingBottom="20dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
-    android:layout_height="wrap_content">
+    android:paddingBottom="20dp">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +23,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:scaleType="fitCenter"
-            android:layout_marginRight="5dp" />
+            android:layout_marginRight="5dp"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,11 +53,11 @@
                     android:src="@drawable/ic_baseline_timer_24" />
 
                 <TextView
-                    android:id="@+id/stt"
+                    android:id="@+id/tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vừa xong"
                     android:fontFamily="@font/segoe_bold"
+                    android:text="Vừa xong"
                     android:textColor="@color/gray" />
             </LinearLayout>
         </LinearLayout>
@@ -63,10 +65,13 @@
 
     <TextView
         android:id="@+id/content_post"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:fontFamily="@font/segoe_ui"
         android:text="đây là một bài viết"
+
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -75,20 +80,101 @@
 
     <ImageView
         android:id="@+id/img_post"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
         android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content_post" />
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout_like_cmt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/img_post"-->
+<!--        android:orientation="horizontal">-->
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/tv_like"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="150dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="left"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="2"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="20sp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/tv_count_cmt"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text=" bình luận"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="20sp"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:text="LIKE"
-        app:layout_constraintEnd_toEndOf="@+id/img_post"
-        app:layout_constraintStart_toStartOf="@+id/img_post"
-        app:layout_constraintTop_toBottomOf="@+id/img_post" />
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_post">
+
+        <com.amrdeveloper.reactbutton.ReactButton
+            android:id="@+id/reactButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/segoe_bold"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/iv_cmt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/reactButton"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_cmt"
+            android:fontFamily="@font/segoe_bold"
+            android:text="Bình luận"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/iv_share"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_cmt"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_share"
+            android:fontFamily="@font/segoe_bold"
+            android:text="Chia sẻ"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+
+
+
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:text="LIKE"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/img_post"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/img_post"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/img_post" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

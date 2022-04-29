@@ -15,9 +15,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.AdapterPost;
-import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Post;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.Adapter.AdapterPost;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.model.Post;
+import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.model.Story;
 import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,11 +36,14 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-    RecyclerView rvPost;
+    RecyclerView rvPost,storyRCV;
     AdapterPost adapterPost;
     ArrayList<Post> posts;
     FirebaseDatabase fDatabase;
     DatabaseReference dPost;
+    ImageView addStoryImage;
+    ArrayList<Story> Story;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -94,7 +99,15 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvPost = view.findViewById(R.id.rvPost);
         adapterPost = new AdapterPost(posts);
+        addStoryImage = view.findViewById(R.id.iv_add_story);
+
+
+/**
+ * Load Data Post
+ */
+
         rvPost.setAdapter(adapterPost);
+        storyRCV = view.findViewById(R.id.rcv_story);
         LinearLayoutManager layoutManager = new
                 LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvPost.setLayoutManager(layoutManager);
@@ -118,6 +131,12 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+
+    /**
+     *Load Data Story
+     */
+
 
 
     @Override

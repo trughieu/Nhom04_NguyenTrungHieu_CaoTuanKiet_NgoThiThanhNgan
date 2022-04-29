@@ -10,27 +10,45 @@
         <entry key="..\:/nam3/Android/ANDROID NC/MXHFB/app/src/main/res/layout/layout_post.xml" value="0.36666666666666664" />
         <entry key="..\:/nam3/Android/ANDROID NC/MXHFB/app/src/main/res/menu/search_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable-v24/botron.xml" value="0.2765" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable-v24/ic_angry.xml" value="0.252" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable-v24/ic_happy.xml" value="0.252" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.248" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable-v24/ic_like.xml" value="0.252" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bg_button_activate.xml" value="0.2335" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bg_post_bottm.xml" value="0.2335" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bg_post_bottom.xml" value="0.2335" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bg_radius.xml" value="0.252" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bg_tag.xml" value="0.252" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/bgcomment.xml" value="0.248" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/botron_gray.xml" value="0.248" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/botronnnone.xml" value="0.2765" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/button_activate.xml" value="0.2335" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/diagonallayout_circle.xml" value="0.252" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.248" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2525" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_baseline_person_add_24.xml" value="0.252" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2765" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.216" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_close.xml" value="0.2335" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/ic_photo.xml" value="0.252" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/nav_header_main.xml" value="0.2765" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/drawable/side_nav_bar.xml" value="0.2765" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/activity_comment.xml" value="0.33" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/activity_welcome.xml" value="0.36666666666666664" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/bgcomment.xml" value="0.36666666666666664" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_add.xml" value="0.33" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_friend.xml" value="0.36666666666666664" />
-        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_home.xml" value="0.19250751982499317" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_nav_jet_back_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
-        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/fragment_setting.xml" value="0.33" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/item_comment.xml" value="0.36666666666666664" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/item_story.xml" value="0.33" />
+        <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/item_userphoto.xml" value="0.36666666666666664" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/layout_friend_request.xml" value="0.33" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/layout_notification.xml" value="0.33" />
         <entry key="..\:/nam3/Android/ANDROIDNC/MXHFB/app/src/main/res/layout/layout_post.xml" value="0.33" />
