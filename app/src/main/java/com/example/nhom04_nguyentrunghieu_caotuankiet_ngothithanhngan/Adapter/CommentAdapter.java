@@ -52,7 +52,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.viewHold
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 Glide.with(context).load(user.getAvatar()).into(holder.imgUser);
-                holder.txtName.setText(user.getUserName());
+                holder.txtName.setText(user.getName());
             }
 
             @Override

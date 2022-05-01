@@ -2,30 +2,16 @@ package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.model;
 
 import java.io.Serializable;
 
-public class Post implements Serializable {
+public class Post implements Serializable, Comparable<Post>{
     String avt;
+    private String postId;
     String postedBy;
     String postDescription;//
     String postImage;//
-    String postId;//
-     String postedAt;//
-
-    public Post(String avt, String postedBy, String postDescription, String postImage, String postId, String postedAt) {
-        this.avt = avt;
-        this.postedBy = postedBy;
-        this.postDescription = postDescription;
-        this.postImage = postImage;
-        this.postId = postId;
-        this.postedAt = postedAt;
-    }
-
-    public String getPostedAt() {
-        return postedAt;
-    }
-
-    public void setPostedAt(String postedAt) {
-        this.postedAt = postedAt;
-    }
+    long postedAt;//
+    int postLike;
+    int commentCount;
+    int share;
 
     public String getPostId() {
         return postId;
@@ -34,6 +20,77 @@ public class Post implements Serializable {
     public void setPostId(String postId) {
         this.postId = postId;
     }
+
+    public Post(String avt, String postId, String postedBy, String postDescription, String postImage, long postedAt, int postLike, int commentCount, int share) {
+        this.avt = avt;
+        this.postId = postId;
+        this.postedBy = postedBy;
+        this.postDescription = postDescription;
+        this.postImage = postImage;
+        this.postedAt = postedAt;
+        this.postLike = postLike;
+        this.commentCount = commentCount;
+        this.share = share;
+    }
+
+    public int getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
+    }
+
+    public int getShare() {
+        return share;
+    }
+
+    public void setShare(int share) {
+        this.share = share;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "avt='" + avt + '\'' +
+                ", postedBy='" + postedBy + '\'' +
+                ", postDescription='" + postDescription + '\'' +
+                ", postImage='" + postImage + '\'' +
+                ", postedAt='" + postedAt + '\'' +
+                ", postLike='" + postLike + '\'' +
+                ", commentCount='" + commentCount + '\'' +
+                ", share='" + share + '\'' +
+                '}';
+    }
+
+    public Post(String avt, String postedBy, String postDescription, String postImage, long postedAt, int postLike, int commentCount, int share) {
+        this.avt = avt;
+        this.postedBy = postedBy;
+        this.postDescription = postDescription;
+        this.postImage = postImage;
+        this.postedAt = postedAt;
+        this.postLike = postLike;
+        this.commentCount = commentCount;
+        this.share = share;
+    }
+
+    public int getPostLike() {
+        return postLike;
+    }
+
+    public void setPostLike(int postLike) {
+        this.postLike = postLike;
+    }
+
+
+    public long getPostedAt() {
+        return postedAt;
+    }
+
+    public void setPostedAt(long postedAt) {
+        this.postedAt = postedAt;
+    }
+
 
     public String getPostedBy() {
         return postedBy;
@@ -73,12 +130,7 @@ public class Post implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Post{" +
-                "avt='" + avt + '\'' +
-                ", namepost='" + postedBy + '\'' +
-                ", content='" + postDescription + '\'' +
-                ", imgpost='" + postImage + '\'' +
-                '}';
+    public int compareTo(Post post) {
+        return 0;
     }
 }

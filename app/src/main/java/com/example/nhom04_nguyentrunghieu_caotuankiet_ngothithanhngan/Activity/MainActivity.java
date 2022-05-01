@@ -21,10 +21,14 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     FloatingActionButton buttonAddPost;
+    FirebaseDatabase fDatabase;
+    FirebaseAuth fAuth;
 //    Toolbar toolbar;
 //
 //    NavController navController;
@@ -39,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        toolbar=findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+        fDatabase = FirebaseDatabase.getInstance();
+        fAuth = FirebaseAuth.getInstance();
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);

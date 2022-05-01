@@ -3,17 +3,16 @@ package com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String name,userName, email, pass, avatar, cover, about, userID;
+    String name, email, pass, avatar, cover, about, userID;
     long followerCount;
     long followingCount;
 
     public User() {
     }
 
-    public User(String name, String userName, String email, String pass, String avatar, String cover, String about, long followerCount, long followingCount) {
+    public User(String name,  String email, String pass, String avatar, String cover, String about, long followerCount, long followingCount) {
         this.name = name;
         this.email = email;
-        this.userName = userName;
         this.pass = pass;
         this.avatar = avatar;
         this.cover = cover;
@@ -86,19 +85,12 @@ public class User implements Serializable {
         this.followerCount = followerCount;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public long getFollowingCount() {
         return followingCount;
     }
-
     public void setFollowingCount(long followingCount) {
         this.followingCount = followingCount;
     }
+
 }

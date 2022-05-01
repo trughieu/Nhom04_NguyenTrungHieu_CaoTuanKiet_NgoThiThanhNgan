@@ -6,10 +6,12 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amrdeveloper.reactbutton.ReactButton;
@@ -19,6 +21,11 @@ import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.R;
 import com.example.nhom04_nguyentrunghieu_caotuankiet_ngothithanhngan.ReactionButton.FbReactions;
 import com.github.marlonlom.utilities.timeago.TimeAgo;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -28,7 +35,8 @@ import java.util.ArrayList;
 public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost> {
     Context context;
     ArrayList<Post> arrayList;
-
+    FirebaseDatabase fDatabase;
+    FirebaseAuth fAuth;
 
     public AdapterPost(ArrayList<Post> arrayList, Context context) {
         this.arrayList = arrayList;
@@ -70,6 +78,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
              */
             StorageReference postImg = storageReference.child("posts/" +
                     post.getPostImage());
+
             postImg.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
@@ -86,19 +95,111 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
             /**
              * Load nội dung bài viết
              */
-//            if (post.getPosrDescription().equals(""))
-//                holder.tvContentPost.setVisibility(View.GONE);
-//            else
-                holder.tvContentPost.setText(post.getPostDescription());
+            if (post.getPostDescription().equals(""))
+                holder.tvContentPost.setVisibility(View.GONE);
+            else
+            holder.tvContentPost.setText(post.getPostDescription());
             /**
              * load thời gian bài viết
              */
-//            String time = TimeAgo.using(post.getPostedAt());
-//            holder.tvTime.setText(time);
-            holder.tvTime.setText(post.getPostedAt());
-/**
- *
- */
+            String time = TimeAgo.using(post.getPostedAt());
+            holder.tvTime.setText(time);
+//            holder.tvTime.setText(post.getPostedAt());
+            /**
+             *load luot like
+             */
+
+            holder.txtLike.setText((post.getPostLike()) + " lượt thích");
+
+            /**
+             * load binh luan
+             */
+
+            holder.txtCmtCount.setText((post.getCommentCount()) + " bình luận");
+
+            /**
+             * load luot share
+             */
+            holder.txtShare.setText((post.getShare()) + " chia sẽ");
+
+            /**
+             * tang giam luot like
+             */
+            FirebaseDatabase.getInstance().getReference()
+                    .child("post")
+                    .child(post.getPostId())
+                    .child("like")
+                    .child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+
+                        holder.reactButton.setOnClickListener(v -> {
+                            holder.reactButton.setImageResource(R.drawable.like);
+                            FirebaseDatabase.getInstance().getReference()
+                                    .child("post")
+                                    .child(post.getPostId())
+                                    .child("like")
+                                    .child(FirebaseAuth.getInstance().getUid())
+                                    .removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    FirebaseDatabase.getInstance().getReference()
+                                            .child("post")
+                                            .child(post.getPostId())
+                                            .child("postLike")
+                                            .setValue(post.getPostLike() - 1).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    } else {
+//                        holder.reactButton.setReactions(FbReactions.reactions);
+//                        holder.reactButton.setDefaultReaction(FbReactions.defaultReact);
+//                        holder.reactButton.setEnableReactionTooltip(true);
+
+                        holder.reactButton.setOnClickListener(v -> {
+//                            holder.reactButton.setReactions(FbReactions.reactions);
+//                            holder.reactButton.setEnableReactionTooltip(true);
+                            holder.reactButton.setImageResource(R.drawable.ic_like);
+                            FirebaseDatabase.getInstance().getReference()
+                                    .child("post")
+                                    .child(post.getPostId())
+                                    .child("like")
+                                    .child(FirebaseAuth.getInstance().getUid())
+                                    .setValue(true).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    FirebaseDatabase.getInstance().getReference()
+                                            .child("post")
+                                            .child(post.getPostId())
+                                            .child("postLike")
+                                            .setValue(post.getPostLike() + 1).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+            /**
+             *
+             */
+
+
             holder.btnCmt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -118,13 +219,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
 //                context.startActivity(intent);
 //            });
 
-//
-//            holder.btnCmt.setOnClickListener(v->{
-//                Intent intent = new Intent(context, CommentActivity.class);
-//                intent.putExtra("post", post);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
-//            });
         }
 
     }
@@ -137,16 +231,18 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
 
 
     public class ViewHolderPost extends RecyclerView.ViewHolder {
-        TextView tvNamePost, tvContentPost, btnCmt, tvTime, btnShare;
+        TextView tvNamePost, tvContentPost, btnCmt, tvTime, btnShare, txtCmtCount, txtLike, txtShare;
         ImageView img_post, avtPost;
-        ReactButton reactButton;
+        ImageButton reactButton;
 
         public ViewHolderPost(View itemView) {
             super(itemView);
             avtPost = itemView.findViewById(R.id.avtPost);
             tvNamePost = itemView.findViewById(R.id.namePost);
-//            txtCmtCount=itemView.findViewById(R.id.tv_count_cmt);
+            txtCmtCount = itemView.findViewById(R.id.tv_count_cmt);
             tvTime = itemView.findViewById(R.id.tv_time);
+            txtLike = itemView.findViewById(R.id.tv_like);
+            txtShare = itemView.findViewById(R.id.tv_count_share);
 
             tvContentPost = itemView.findViewById(R.id.content_post);
             img_post = itemView.findViewById(R.id.img_post);
@@ -154,9 +250,9 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolderPost
             btnShare = itemView.findViewById(R.id.iv_share);
             reactButton = itemView.findViewById(R.id.reactButton);
 
-            reactButton.setReactions(FbReactions.reactions);
-            reactButton.setDefaultReaction(FbReactions.defaultReact);
-            reactButton.setEnableReactionTooltip(true);
+//            reactButton.setReactions(FbReactions.reactions);
+//            reactButton.setDefaultReaction(FbReactions.defaultReact);
+//            reactButton.setEnableReactionTooltip(true);
         }
     }
 }

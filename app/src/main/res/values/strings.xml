@@ -9,5 +9,7 @@
     <string name="your_story">Tin của bạn</string>
     <string name="notify">Thông báo</string>
 
+    <string name="logout">Đăng xuất</string>
+    <string name="setting">Cài đặt</string>
 
 </resources>
